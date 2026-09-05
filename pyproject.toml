@@ -4,4 +4,30 @@ version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.14"
-dependencies = []
+dependencies = [
+    "fastapi>=0.141.1",
+    "langchain>=1.4.0",
+    "langchain-openai>=1.6.0",
+    "loguru>=0.7.3",
+    "pydantic>=2.13.5",
+    "python-dotenv>=1.2.3",
+    "pyyaml>=6.0.3",
+    "uvicorn>=0.52.4",
+]
+
+[dependency-groups]
+dev = [
+    "black>=26.5.1",
+    "ruff>=0.16.6",
+]
+
+[tool.black]
+line-length = 120
+target-version = ['py314']
+
+[tool.ruff]
+line-length = 120
+
+[tool.ruff.lint]
+select = ["E", "F", "I"]
+ignore = ["E501"]
