@@ -66,6 +66,8 @@ def setup_logging():
         log_obj.setLevel(logging.DEBUG)
         log_obj.propagate = False
 
+    logger.info("✅ init logger complete...")
+
 
 # 全局导出 logger 实例
 __all__ = ["logger", "setup_logging"]

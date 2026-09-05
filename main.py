@@ -3,10 +3,14 @@ import uuid
 import uvicorn
 from fastapi import FastAPI, Request
 
+from common.load_env import load_env
 from common.logger import logger, setup_logging
 
 # 初始化：让 Uvicorn 日志被 Loguru 接管
 setup_logging()
+
+# load env
+load_env()
 
 app = FastAPI(title="Loguru 演示", version="1.0")
 
