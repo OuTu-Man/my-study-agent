@@ -11,7 +11,7 @@ LOG_DIR.mkdir(exist_ok=True)
 # 清除默认 handler，避免重复输出
 logger.remove()
 
-# ----- 控制台输出（开发友好）-----
+# ----- 控制台输出 -----
 logger.add(
     sys.stdout,
     level="DEBUG",
@@ -24,7 +24,7 @@ logger.add(
     colorize=True,
 )
 
-# ----- 文件输出（按日轮转，保留7天）-----
+# ----- 文件输出（按日轮转，保留3天）-----
 logger.add(
     LOG_DIR / "app_{time:YYYY-MM-DD}.log",
     level="DEBUG",
@@ -65,8 +65,6 @@ def setup_logging():
         # 设置日志级别，确保所有日志都被拦截
         log_obj.setLevel(logging.DEBUG)
         log_obj.propagate = False
-
-    logger.info("✅ init logger complete...")
 
 
 # 全局导出 logger 实例
